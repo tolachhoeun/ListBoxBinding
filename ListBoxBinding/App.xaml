@@ -1,0 +1,13 @@
+﻿<Application x:Class="ListBoxBinding.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:ListBoxBinding.ViewModel"
+             xmlns:converter="clr-namespace:ListBoxBinding.Converter"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <vm:ViewModelLocator x:Key="VmLocator"/>
+        <converter:ViewProductConverter x:Key="ViewProductConverter"/>
+    </Application.Resources>
+</Application>
+
+    

@@ -1,0 +1,25 @@
+﻿<Window x:Class="ListBoxBinding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LisrBoxBinding Windows" Height="350" Width="525"
+        DataContext="{Binding Main, Source={StaticResource ResourceKey=VmLocator}}">
+	<Window.Resources>
+		<DataTemplate x:Key="ItemDataTemplate">
+<ContentControl Content="{Binding Converter={StaticResource ViewProductConverter}, Mode=OneWay}"/>
+		</DataTemplate>
+		<ItemsPanelTemplate x:Key="LayoutItemsPanelTemplate">
+			<WrapPanel/>
+		</ItemsPanelTemplate>
+	</Window.Resources>
+ 
+    <Grid>
+    	<TextBlock HorizontalAlignment="Left" Margin="20,10,0,0" Text="All my products" 
+		VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+
+    	<ListBox Margin="10,45,10,10" ItemsSource="{Binding Products}" 
+		ItemTemplate="{DynamicResource ItemDataTemplate}" 
+		ItemsPanel="{DynamicResource LayoutItemsPanelTemplate}" 
+		ScrollViewer.HorizontalScrollBarVisibility="Disabled"/>
+        
+    </Grid>
+</Window>
